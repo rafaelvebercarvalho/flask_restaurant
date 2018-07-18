@@ -18,7 +18,7 @@ def editRestaurant(restaurant_id):
 def deleteRestaurant(restaurant_id):
     return "Pagina para deletar os resturantes %s" %restaurant_id
 
-@app.route("/restaurant/<int:restaurant_id)
+@app.route("/restaurant/<int:restaurant_id")
 @app.route("/restaurant/<int:restaurant_id/menu")
 def showMenu(restaurant_id):
     return "Pagina que vai mostrar o menu do resturante %s" %restaurant_id
