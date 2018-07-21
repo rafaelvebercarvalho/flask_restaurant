@@ -24,7 +24,7 @@ item = {'name': 'Cheese Pizza', 'description': 'made with fresh cheese', 'price'
 @app.route("/restaurant/")
 def showRestaurants():
     # return "Pagina que vai mostrar todos os restaurantes"
-    return render_template('restaurants.html', restaurants=restaurants)
+    return render_template('restaurants.html', restaurant=restaurant)
 
 
 @app.route("/restaurant/new")
@@ -55,7 +55,8 @@ def newMenuItem(restaurant_id):
 
 @app.route("/restaurant/<int:restaurant_id>/menu/edit")
 def editMenuItem(restaurant_id):
-    return "Pagina para editar um menu do resturante %s" % restaurant_id
+    # return "Pagina para editar um menu do resturante %s" % restaurant_id
+    return render_template('editmenuitem.html', item=item )
 
 
 @app.route("/restaurant/<int:restaurant_id>/menu/delete")
