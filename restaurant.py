@@ -24,33 +24,38 @@ item = {'name': 'Cheese Pizza', 'description': 'made with fresh cheese', 'price'
 @app.route("/restaurant/")
 def showRestaurants():
     # return "Pagina que vai mostrar todos os restaurantes"
-    return render_template('restaurants.html', restaurant=restaurant)
+    return render_template('restaurants.html', restaurants=restaurants)
 
 
 @app.route("/restaurant/new")
 def newRestaurants():
-    return "Pagina para criar novos resturantes"
+    # return "Pagina para criar novos resturantes"
+    return render_template('newRestaurants.html')
 
 
 @app.route("/restaurant/<int:restaurant_id>/edit")
 def editRestaurants(restaurant_id):
-    return "Pagina para editar os resturantes %s" % restaurant_id
+    # return "Pagina para editar os resturantes %s" % restaurant_id
+    return render_template('editRestaurants.html', restaurant=restaurant)
 
 
 @app.route("/restaurant/<int:restaurant_id>/delete")
 def deleteRestaurants(restaurant_id):
-    return "Pagina para deletar os resturantes %s" % restaurant_id
+    # return "Pagina para deletar os resturantes %s" % restaurant_id
+    return render_template('deleteRestaurants.html', restaurants=restaurants)
 
 
 @app.route("/restaurant/<int:restaurant_id>")
 @app.route("/restaurant/<int:restaurant_id>/menu")
 def showMenu(restaurant_id):
-    return "Pagina que vai mostrar o menu do resturante %s" % restaurant_id
+    # return "Pagina que vai mostrar o menu do resturante %s" % restaurant_id
+    return render_template('menu.html', restaurants=restaurants)
 
 
 @app.route("/restaurant/<int:restaurant_id>/menu/new")
 def newMenuItem(restaurant_id):
-    return "Pagina para criar um novo menu %s" % restaurant_id
+    # return "Pagina para criar um novo menu %s" % restaurant_id
+    return render_template('newMenuItem.html')
 
 
 @app.route("/restaurant/<int:restaurant_id>/menu/edit")
@@ -61,7 +66,8 @@ def editMenuItem(restaurant_id):
 
 @app.route("/restaurant/<int:restaurant_id>/menu/delete")
 def deleteMenuItem(restaurant_id):
-    return "Pagina para deletar o menu do resturante %s" % restaurant_id
+    # return "Pagina para deletar o menu do resturante %s" % restaurant_id
+    return render_template('deleteMenuItem.html')
 
 
 if __name__ == '__main__':
